@@ -1,0 +1,2 @@
+export const DYNAMO_DB_CLIENT = Symbol('DYNAMO_DB_CONNECTION')
+export const DYNAMO_DB_DATA_MAPPER = Symbol('DYNAMO_DB_DATA_MAPPER')
