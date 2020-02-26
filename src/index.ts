@@ -1,4 +1,2 @@
-import { DynamoDBModule } from './module/dynamodb.module'
-import { InjectDDBModel, ReturnDDBModel } from './module/dynamodb.decorators'
-
-export { DynamoDBModule, ReturnDDBModel, InjectDDBModel }
+export { DynamoDBModule } from './module/dynamodb.module'
+export { InjectDDBModel, ReturnDDBModel } from './module/dynamodb.decorators'

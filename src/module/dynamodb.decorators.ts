@@ -1,7 +1,6 @@
 import { Inject } from '@nestjs/common'
-import { getModelToken } from '../util'
+import { getModelToken, getModelForClass } from '../util'
 import { DynamoDBClass } from './dynamodb.interfaces'
-import { getModelForClass } from '../util/getModelForClass'
 
 export const InjectDDBModel = (model: DynamoDBClass) => Inject(getModelToken(model.name))
 

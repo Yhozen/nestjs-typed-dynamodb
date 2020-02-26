@@ -28,6 +28,10 @@ export class GetModelForClass<T extends instanceOfDynamoDBClass> {
   private schema: any
   private hashKey: string
 
+  getDynamoDBClient(): DynamoDB {
+    return this.dynamoDBClient
+  }
+
   async create(input: Partial<T>): Promise<T> {
     const toSave = Object.assign(new this.dynamoDBClass(), input)
     return this.mapper.put(toSave)

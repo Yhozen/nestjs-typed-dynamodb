@@ -1,18 +1,12 @@
 import * as DynamoDB from 'aws-sdk/clients/dynamodb'
 import * as AWS from 'aws-sdk'
 import { DataMapper } from '@aws/dynamodb-data-mapper'
-const AWSaccessKeyId = 'not-important'
-const AWSsecretAccessKey = 'not-important'
-const AWSregion = 'local'
-const AWSendpoint = 'http://localhost:8000' // This is required
+import { DynamoDBModuleOptions } from './dynamodb.interfaces'
 
-AWS.config.update({
-  accessKeyId: AWSaccessKeyId,
-  secretAccessKey: AWSsecretAccessKey,
-  region: AWSregion
-})
-
-export const createDynamodbClient = (options: DynamoDB.ClientConfiguration): DynamoDB => new DynamoDB(options)
+export const createDynamodbClient = (options: DynamoDBModuleOptions): DynamoDB => {
+  AWS.config.update(options.AWSConfig)
+  return new DynamoDB(options.dynamoDBOptions)
+}
 
 export const createMapper = (dynamoDBClient: DynamoDB): DataMapper =>
   new DataMapper({
