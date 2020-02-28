@@ -21,7 +21,6 @@ export function createDynamoDBProvider(
   })
 
   return models.reduce((providers, dynamoDBClassWithOptions) => {
-    console.log(dynamoDBClassWithOptions)
     const modelFactory = (dynamoDBClient: DynamoDB, mapper: DataMapper) =>
       getModelForClass<InstanceType<DynamoDBClass>>(
         dynamoDBClassWithOptions.dynamoDBClass,

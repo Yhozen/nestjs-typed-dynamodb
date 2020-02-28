@@ -1,7 +1,6 @@
 import { Module, DynamicModule } from '@nestjs/common'
 
 import {
-  DynamoDBClass,
   DynamoDBModuleAsyncOptions,
   DynamoDBModuleOptions,
   DynamoDBInput,
@@ -27,14 +26,11 @@ export class DynamoDBModule {
   }
 
   static forFeature(models: DynamoDBInput[]): DynamicModule {
-    console.log(models)
     const convertedModels = models.map(model =>
       convertToClassWithOptions(model),
     )
-    console.log(convertedModels)
 
     const providers = createDynamoDBProvider(convertedModels)
-    console.log(providers)
 
     return {
       module: DynamoDBModule,
