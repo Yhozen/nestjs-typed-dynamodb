@@ -1,13 +1,13 @@
-import { Module, DynamicModule } from '@nestjs/common'
+import { DynamicModule, Module } from '@nestjs/common'
 
+import { convertToClassWithOptions } from '../util/convertToClassWithOptions'
+import { DynamoDBCoreModule } from './dynamodb.coremodule'
 import {
   DynamoDBModuleAsyncOptions,
   DynamoDBModuleOptions,
   DynamoDBInput,
 } from './dynamodb.interfaces'
-import { DynamoDBCoreModule } from './dynamodb.coremodule'
 import { createDynamoDBProvider } from './dynamodb.providers'
-import { convertToClassWithOptions } from '../util/convertToClassWithOptions'
 
 @Module({})
 export class DynamoDBModule {
