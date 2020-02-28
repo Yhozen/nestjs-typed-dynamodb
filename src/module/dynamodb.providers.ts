@@ -1,10 +1,10 @@
+import { DataMapper } from '@aws/dynamodb-data-mapper'
 import { FactoryProvider } from '@nestjs/common/interfaces'
 import { DynamoDB } from 'aws-sdk'
-import { DataMapper } from '@aws/dynamodb-data-mapper'
 
-import { getModelToken, getModelForClass } from '../util'
-import { DynamoDBClass, DynamoDBClassWithOptions } from './dynamodb.interfaces'
+import { getModelForClass, getModelToken } from '../util'
 import { DYNAMO_DB_CLIENT, DYNAMO_DB_DATA_MAPPER } from './dynamodb.constants'
+import { DynamoDBClass, DynamoDBClassWithOptions } from './dynamodb.interfaces'
 
 type ModelFactory = (dynamoDBClient: DynamoDB, mapper: DataMapper) => any
 
@@ -21,7 +21,6 @@ export function createDynamoDBProvider(
   })
 
   return models.reduce((providers, dynamoDBClassWithOptions) => {
-    console.log(dynamoDBClassWithOptions)
     const modelFactory = (dynamoDBClient: DynamoDB, mapper: DataMapper) =>
       getModelForClass<InstanceType<DynamoDBClass>>(
         dynamoDBClassWithOptions.dynamoDBClass,
