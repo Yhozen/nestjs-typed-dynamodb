@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>Caveats · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="GETTING_STARTED.html" />
+    <link rel="next" href="TO-DO.html" />
     
+    
+    <link rel="prev" href="MODEL.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -139,7 +141,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="CAVEATS.html">
+        <li class="chapter active" data-level="1.5" data-path="CAVEATS.html">
             
                 <a href="CAVEATS.html">
             
@@ -195,7 +197,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >Caveats</a>
     </h1>
 </div>
 
@@ -210,8 +212,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
-<p><a href="https://badge.fury.io/js/nestjs-typed-dynamodb" target="_blank"><img src="https://badge.fury.io/js/nestjs-typed-dynamodb.svg" alt="npm version"></a></p>
+                                <h1 id="caveats">Caveats</h1>
+<p>This is an early stage work, there is a lot to be improved though we found it&apos;s still a valuable resource that could be enhance with the testing and help of others</p>
+<ul>
+<li>Find method uses query and scan, while query is suitable for real queries, scan goes through every item thus it gets slower and slower as your table gets more items. Find will always try to use query first.</li>
+</ul>
 
                                 
                                 </section>
@@ -239,8 +244,12 @@
 
             
                 
+                <a href="MODEL.html" class="navigation navigation-prev " aria-label="Previous page: DynamoDB Model">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="GETTING_STARTED.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Getting Started">
+                
+                <a href="TO-DO.html" class="navigation navigation-next " aria-label="Next page: TO DO">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -251,7 +260,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Getting Started","level":"1.2","depth":1,"path":"GETTING_STARTED.md","ref":"GETTING_STARTED.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2020-02-29T16:15:03.053Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-29T18:40:43.906Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Caveats","level":"1.5","depth":1,"next":{"title":"TO DO","level":"1.6","depth":1,"path":"TO-DO.md","ref":"TO-DO.md","articles":[]},"previous":{"title":"DynamoDB Model","level":"1.4","depth":1,"path":"MODEL.md","ref":"MODEL.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CAVEATS.md","mtime":"2020-02-29T18:37:46.613Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-29T18:40:43.906Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

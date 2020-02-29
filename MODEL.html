@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>DynamoDB Model · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="GETTING_STARTED.html" />
+    <link rel="next" href="CAVEATS.html" />
     
+    
+    <link rel="prev" href="CONFIGS.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -126,7 +128,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="MODEL.html">
+        <li class="chapter active" data-level="1.4" data-path="MODEL.html">
             
                 <a href="MODEL.html">
             
@@ -195,7 +197,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >DynamoDB Model</a>
     </h1>
 </div>
 
@@ -210,8 +212,80 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
-<p><a href="https://badge.fury.io/js/nestjs-typed-dynamodb" target="_blank"><img src="https://badge.fury.io/js/nestjs-typed-dynamodb.svg" alt="npm version"></a></p>
+                                <h1 id="model">Model</h1>
+<p>So far there are only a few methods implemented. Here &quot;Schema&quot; is used as a generic value</p>
+<h3 id="main-methods">Main methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Paramaters</th>
+<th>Return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create</td>
+<td>Creates a document in DynamoDB</td>
+<td>Object with required attributes of Schema</td>
+<td>Promise of Schema</td>
+</tr>
+<tr>
+<td>find</td>
+<td>Find every document that matches</td>
+<td>Object with some attributes of Schema</td>
+<td>Promise of a array of Schemas</td>
+</tr>
+<tr>
+<td>findById</td>
+<td>Find one document by its ID</td>
+<td>ID</td>
+<td>Promise of Schema&gt;</td>
+</tr>
+<tr>
+<td>findByIdAndDelete</td>
+<td>Delete one document by its ID</td>
+<td>ID</td>
+<td>Promise of DynamoDB.DeleteItemOutput</td>
+</tr>
+<tr>
+<td>findByIdAndUpdate</td>
+<td>Update one document by its ID</td>
+<td>ID</td>
+<td>Promise of Schema</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Dynamo uses PUT method, so create is <strong>both</strong> create and update</p>
+<h3 id="helper-methods">Helper methods</h3>
+<p>If something is not yet implemented, you can easily create your own methods with these helpers</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getTable</td>
+<td>Returns table name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>getSchema</td>
+<td>Returns corresponding <strong><em>DynamoDB Schema</em></strong></td>
+<td>string</td>
+</tr>
+<tr>
+<td>getDynamoDBClient</td>
+<td>Returns DynamoDBClient</td>
+<td><a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html" target="_blank">DynamoDB</a></td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -239,8 +313,12 @@
 
             
                 
+                <a href="CONFIGS.html" class="navigation navigation-prev " aria-label="Previous page: Module configurations">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="GETTING_STARTED.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Getting Started">
+                
+                <a href="CAVEATS.html" class="navigation navigation-next " aria-label="Next page: Caveats">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -251,7 +329,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Getting Started","level":"1.2","depth":1,"path":"GETTING_STARTED.md","ref":"GETTING_STARTED.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2020-02-29T16:15:03.053Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-29T18:40:43.906Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DynamoDB Model","level":"1.4","depth":1,"next":{"title":"Caveats","level":"1.5","depth":1,"path":"CAVEATS.md","ref":"CAVEATS.md","articles":[]},"previous":{"title":"Module configurations","level":"1.3","depth":1,"path":"CONFIGS.md","ref":"CONFIGS.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"MODEL.md","mtime":"2020-02-29T18:23:25.820Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-29T18:40:43.906Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
